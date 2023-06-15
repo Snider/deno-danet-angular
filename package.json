@@ -1,0 +1,9 @@
+{
+  "name": "danet-angular",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "cd back && ~/.deno/bin/deno task launch-server"
+  }
+}

@@ -1,4 +1,5 @@
 {
+  "lib": ["deno.window", "deno.ns"],
   "compilerOptions": {
     "plugins": [
       {

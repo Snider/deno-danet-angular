@@ -6,14 +6,19 @@ import { SpecBuilder, SwaggerModule } from 'danet_swagger/mod.ts';
 export const bootstrap = async () => {
   await configAsync({ export: true });
   const application = new DanetApplication();
+
   await application.init(AppModule);
+  const staticAssetsPath = `../front/dist/danet-angular/`;
+  application.useStaticAssets(staticAssetsPath);
+  // application.setViewEngineDir('../front/dist/danet-angular');
+  console.log(Deno.cwd());
   const spec = new SpecBuilder()
     .setTitle('Todo')
     .setDescription('The todo API')
     .setVersion('1.0')
     .build();
-  const document = await SwaggerModule.createDocument(application, spec);
-  await SwaggerModule.setup('api', application, document);
+   const document = await SwaggerModule.createDocument(application, spec);
+   await SwaggerModule.setup('api', application, document);
   application.addGlobalMiddlewares(loggerMiddleware);
   return application;
 };
