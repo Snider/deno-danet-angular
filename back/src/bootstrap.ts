@@ -27,6 +27,9 @@ export const bootstrap = async () => {
             try {
                 if (Deno.statSync(`${frontendFiles}/${pathname}`).isFile) {
                     ctx.response.type = lookup(pathname)
+                }else{
+                    ctx.response.type = 'text/html';
+                    pathname = 'index.html'
                 }
             } catch (e) {
                 ctx.response.type = 'text/html';
