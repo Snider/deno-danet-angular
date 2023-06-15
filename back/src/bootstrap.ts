@@ -40,8 +40,6 @@ export const bootstrap = async () => {
         }
 
     })
-    const staticAssetsPath = `../front/dist/danet-angular/`;
-    application.useStaticAssets(staticAssetsPath);
 
     const spec = new SpecBuilder()
         .setTitle('Todo')
