@@ -1,9 +1,12 @@
 {
   "name": "danet-angular",
   "version": "1.0.0",
-  "dependencies": {
+  "devDependencies": {
+    "@angular/cli": "latest"
   },
   "scripts": {
-    "start": "cd back && ~/.deno/bin/deno task launch-server"
+    "ng": "ng",
+    "start": "cd back && ~/.deno/bin/deno task launch-server",
+    "dev": "cd front && ng build --output-path ../public --watch"
   }
 }
